@@ -3,12 +3,18 @@ using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
-    public class MoviesController : Controller
+    public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
 
+        public CustomersController()
+        {
+            _context=new ApplicationDbContext();
+        }
         private readonly ShowMovieViewModel _model = new ShowMovieViewModel()
         {
             Customers =new List<Customer>
@@ -31,7 +37,7 @@ namespace Vidly.Controllers
         
         public ActionResult Customers()
         {
-            return View(_model);
+            return View(_context.Customers.Include(c=>c.MembershipType).ToList());
         }
         
         public ActionResult Movies()
@@ -41,7 +47,14 @@ namespace Vidly.Controllers
         [Route("Customers/Details/{id}")]
         public ActionResult Details(int? id)
         {
-            return View(_model.Customers.FirstOrDefault(customer =>customer.Id==id));
+            return View(_context.Customers.FirstOrDefault(customer =>customer.Id==id));
+        }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+            
         }
     }
 }

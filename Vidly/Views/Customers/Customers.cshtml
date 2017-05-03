@@ -1,20 +1,26 @@
-﻿@model Vidly.ViewModels.ShowMovieViewModel
+﻿@model List<Vidly.Models.Customer>
 @{
     ViewBag.Title = "Customers";
 }
 
 <h2>Customers</h2>
 <table class="table table-bordered table-hover">
+    <thead>
     <tr>
-        <td><h3>Customer</h3></td>
+        <th><h3>Customer</h3></th>
+        <th><h3>Discount Rate</h3></th>
     </tr>
+    </thead>
 
-    @foreach (var customer in Model.Customers)
+    <tbody>
+    @foreach (var customer in Model)
     {
         <tr>
             <td><a href="@($"/Customers/Details/{customer.Id}")">@customer.Name</a></td>
+            <td>@customer.MembershipType.DiscountRate%</td>
         </tr>
     }
-    <tr>
+    </tbody>
+   
 </table>
 
