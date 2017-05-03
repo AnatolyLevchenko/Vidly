@@ -9,3 +9,16 @@
 
 <h2>@result</h2>
 
+@{
+    var res = Model.MembershipType.MbType ? "Monthly" : "Pay as you can!";
+
+    var birthday = Model.BrithDateTime;
+}
+<ul>
+    <li>@res</li>
+    @if (birthday != null)
+    {
+        <li>@birthday.ToString() </li>
+    }
+</ul>
+

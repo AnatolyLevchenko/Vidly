@@ -17,7 +17,10 @@
     {
         <tr>
             <td><a href="@($"/Customers/Details/{customer.Id}")">@customer.Name</a></td>
-            <td>@customer.MembershipType.DiscountRate%</td>
+               @{
+             var res=customer.MembershipType.MbType ? "Monthly" : "Pay as you can!";
+               }
+            <td>@res</td>
         </tr>
     }
     </tbody>

@@ -194,6 +194,26 @@
     <Compile Include="Migrations\201705031304552_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201705031304552_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705031356565_AddWordMembershipType.cs" />
+    <Compile Include="Migrations\201705031356565_AddWordMembershipType.Designer.cs">
+      <DependentUpon>201705031356565_AddWordMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031357410_fixingemptyvalues.cs" />
+    <Compile Include="Migrations\201705031357410_fixingemptyvalues.Designer.cs">
+      <DependentUpon>201705031357410_fixingemptyvalues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031359475_fixingemptyvalues1.cs" />
+    <Compile Include="Migrations\201705031359475_fixingemptyvalues1.Designer.cs">
+      <DependentUpon>201705031359475_fixingemptyvalues1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031416179_AddBirthday.cs" />
+    <Compile Include="Migrations\201705031416179_AddBirthday.Designer.cs">
+      <DependentUpon>201705031416179_AddBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705031416516_FillingBrithdays.cs" />
+    <Compile Include="Migrations\201705031416516_FillingBrithdays.Designer.cs">
+      <DependentUpon>201705031416516_FillingBrithdays.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -293,6 +313,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705031304552_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201705031304552_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031356565_AddWordMembershipType.resx">
+      <DependentUpon>201705031356565_AddWordMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031357410_fixingemptyvalues.resx">
+      <DependentUpon>201705031357410_fixingemptyvalues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031359475_fixingemptyvalues1.resx">
+      <DependentUpon>201705031359475_fixingemptyvalues1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031416179_AddBirthday.resx">
+      <DependentUpon>201705031416179_AddBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705031416516_FillingBrithdays.resx">
+      <DependentUpon>201705031416516_FillingBrithdays.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
