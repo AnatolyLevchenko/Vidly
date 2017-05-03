@@ -1,27 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
+
+        private readonly ShowMovieViewModel _model = new ShowMovieViewModel()
+        {
+            Customers =new List<Customer>
+            {
+                new Customer {Name = "Jhon Smith",Id = 1},
+                new Customer {Name = "Alice Jhonson",Id=2}
+            },
+            Movies = new List<Movie>
+            {
+                new Movie {Name = "Matrix",Id = 1},
+                new Movie {Name = "Shrek",Id = 2}
+            }
+        };
         
-        public ActionResult Random()
+    
+        public ActionResult Index()
         {
-            Movie movie=new Movie() {Name = "Shrek"};
-
-            return View(movie);
+            return View();
         }
-        [Route("movies/release/{year}/{month:regex(\\d2):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year,int month)
+        
+        public ActionResult Customers()
         {
-
-            return Content(year + "/" + month);
+            return View(_model);
+        }
+        
+        public ActionResult Movies()
+        {
+            return View(_model);
+        }
+        [Route("Customers/Details/{id}")]
+        public ActionResult Details(int? id)
+        {
+            return View(_model.Customers.FirstOrDefault(customer =>customer.Id==id));
         }
     }
 }
