@@ -1,6 +1,29 @@
-﻿
+﻿@model List<Vidly.Models.Customer>
 @{
-    ViewBag.Title = "Films";
+    ViewBag.Title = "Customers";
 }
 
-<h3>Welcome to our site</h3>
+<h2>Customers</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th><h3>Customer</h3></th>
+        <th><h3>Discount Rate</h3></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(customer.Name,"Details","Customers",new {customer.Id},null)</td>
+            @{
+                var res=customer.MembershipType.MbType ? "Monthly" : "Pay as you can!";
+            }
+            <td>@res</td>
+        </tr>
+    }
+    </tbody>
+   
+</table>
+
